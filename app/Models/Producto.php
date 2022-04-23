@@ -42,6 +42,10 @@ class Producto extends Model
         return $this->hasOne(Kardex::class);
     }
 
+    public function historial(){
+        return $this->hasMany(Historial::class);
+    }
+
     
     //Acceso tomando en cuenta la convencion del nombre del campo 
     public function getImagenAttribute()
