@@ -13,17 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('productos', function (Blueprint $table) {
             $table->id();
             $table->string('nombre',255);
-            $table->string('telefono',10)->nullable();
-            $table->string('correo',100)->unique();
-            $table->string('direccion',255);
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('contraseña',250);
-            $table->boolean('estado')->default(true);
-            $table->string('image',100)->nullable();
-            $table->rememberToken();
+            $table->string('codigo',25)->nullable();
+            $table->decimal('precio',10,2)->default(0);
+            $table->integer('stock');
+            $table->boolean('consignado')->default(true);
+            $table->string('imagen',100)->nullable();
+            $table->unsignedBigInteger('categoria_id');
+            $table->foreign('categoria_id')->references('id')->on('categorias');
             $table->timestamps();
         });
     }
@@ -35,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('productos');
     }
 };
