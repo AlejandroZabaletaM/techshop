@@ -11,17 +11,17 @@ class Producto extends Model
     
     protected $fillable=['nombre','codigo','precio','stock','consignado','imagen','categoria_id','user_id'];
 
-    public function producto_categoria()
+    public function categoria()
     {
-        return $this->belongsTo(Producto_Categoria::class);
+        return $this->belongsToMany(Categoria::class, 'producto_categoria');
     }
 
-    public function producto_venta(){
-        return $this->belongsToMany(Producto_Venta::class);
+    public function venta(){
+        return $this->belongsToMany(Venta::class, 'producto_venta');
     }
 
-    public function producto_compra(){
-        return $this->belongsToMany(Producto_Compra::class);
+    public function compra(){
+        return $this->belongsToMany(Compra::class, 'producto_compra');
     }
 
     public function user()

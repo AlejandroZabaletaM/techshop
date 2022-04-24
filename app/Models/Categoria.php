@@ -12,10 +12,10 @@ class Categoria extends Model
     protected $fillable = ['nombre', 'imagen', 'activa'];
 
 
-    public function productos()
+    public function producto()
     {
         //Nuestra categoria puede tener muchos productos
-        return $this->hasMany(Producto::class);
+        return $this->belongsToMany(Producto::class, 'producto_categoria');
     }
 
     //Accesor tomando en cuenta la convencion del nombre del campo 
