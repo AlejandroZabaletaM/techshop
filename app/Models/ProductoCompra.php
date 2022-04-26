@@ -10,5 +10,6 @@ class ProductoCompra extends Model
     use HasFactory;
 
     protected $fillable=['compra_id','producto_id'];
+    public $timestamps=false;
 
 }
