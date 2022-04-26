@@ -44,6 +44,10 @@ class User extends Authenticatable
         return $this->hasOne(Historial::class);
     }
 
+    public function pregunta(){
+        return $this->hasMany(Pregunta::class);
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

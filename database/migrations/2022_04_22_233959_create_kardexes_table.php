@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('kardexes', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('producto_id');
+            $table->foreign('producto_id')->references('id')->on('productos');
+            $table->date('fecha_publicacion');
+            $table->int('preguntas');
+            $table->int('compras');
             $table->timestamps();
         });
     }

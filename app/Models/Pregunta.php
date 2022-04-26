@@ -9,10 +9,15 @@ class Pregunta extends Model
 {
     use HasFactory;
 
-    protected $fillable=['pregunta','respuesta','estado','producto_id'];
+    protected $fillable=['user_id','pregunta','respuesta','estado','producto_id'];
 
     public function producto()
     {
-        return $this->belongsToMany(Producto::class);
+        return $this->belongsTo(Producto::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

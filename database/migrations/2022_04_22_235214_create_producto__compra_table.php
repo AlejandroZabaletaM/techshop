@@ -15,7 +15,10 @@ return new class extends Migration
     {
         Schema::create('producto__compras', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->unsignedBigInteger('producto_id');
+            $table->foreign('producto_id')->references('id')->on('productos');
+            $table->unsignedBigInteger('compra_id');
+            $table->foreign('compra_id')->references('id')->on('compras');
         });
     }
 
