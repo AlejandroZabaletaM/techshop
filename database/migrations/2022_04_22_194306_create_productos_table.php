@@ -21,8 +21,6 @@ return new class extends Migration
             $table->integer('stock');
             $table->boolean('consignado')->default(true);
             $table->string('imagen',100)->nullable();
-            $table->unsignedBigInteger('categoria_id');
-            $table->foreign('categoria_id')->references('id')->on('categorias');
             $table->timestamps();
         });
     }
