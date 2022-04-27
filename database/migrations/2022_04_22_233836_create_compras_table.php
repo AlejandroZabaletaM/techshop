@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->date('fecha');
             $table->string('descripcion');
-            $table->boolean('estado');
+            $table->enum('estado', ['pendiente', 'cancelada', 'completada']);
             $table->timestamps();
         });
     }

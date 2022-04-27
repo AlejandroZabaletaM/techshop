@@ -50,7 +50,7 @@ class Producto extends Model
     //Acceso tomando en cuenta la convencion del nombre del campo 
     public function getImagenAttribute()
     {
-        if (file_exists('storage/products/'. $this->imagen))
+        if (file_exists('storage/productos/'. $this->imagen))
             return $this->imagen;
         else
             return 'noimg.jpg';

@@ -15,6 +15,13 @@ return new class extends Migration
     {
         Schema::create('historials', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('venta_id')->nullable();
+            $table->unsignedBigInteger('producto_id')->nullable();
+            $table->date('fecha_registro')->nullable();
+            $table->integer('productos_registrados')->nullable();
+            $table->integer('productos_ofertados')->nullable();
+            $table->integer('productos_comprados')->nullable();
+            $table->integer('productos_consignados')->nullable();
             $table->timestamps();
         });
     }

@@ -15,6 +15,13 @@ return new class extends Migration
     {
         Schema::create('preguntas', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('producto_id');
+            $table->foreign('producto_id')->references('id')->on('productos');
+            $table->string('pregunta');
+            $table->string('respuesta');
+            $table->enum('estado', ['pendiente', 'respondida', 'cancelada']);
             $table->timestamps();
         });
     }

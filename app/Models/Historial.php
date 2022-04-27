@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Historial extends Model
 {
     use HasFactory;
-    protected $fillable=['user_id','producto_id','cantidad','tipo']; 
+    protected $fillable=['user_id','producto_id','fecha_registro','productos_registrados','productos_ofertados','productos_comprados','productos_consignados']; 
 
     public function user()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsTo(User::class);
     }
 
     public function producto()
