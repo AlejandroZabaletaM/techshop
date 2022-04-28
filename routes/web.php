@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 //Pagina de inicio
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home'); //->name('home') para poder usar la ruta en el archivo de vistas
 
 //CRUD para productos
 Route::get('productos', 'ProductoController@index')->name('productos.index'); //listado de productos
