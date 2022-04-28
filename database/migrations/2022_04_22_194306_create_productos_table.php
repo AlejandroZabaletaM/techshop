@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('codigo',25)->nullable();
             $table->decimal('precio',10,2)->default(0);
             $table->integer('stock');
-            $table->boolean('consignado')->default(true);
+            $table->boolean('consignado')->default(false);
             $table->string('imagen',100)->nullable();
             $table->timestamps();
         });
