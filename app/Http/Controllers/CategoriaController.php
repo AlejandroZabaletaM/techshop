@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Categoria;
 
 use Illuminate\Http\Request;
 
@@ -11,9 +12,15 @@ class CategoriaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
     public function index()
     {
-        //
+        $categorias=Categoria::orderBy('id','Asc')->paginate(10);
+
+        return view('categoria.index',compact('categorias'));
     }
 
     /**
