@@ -52,6 +52,7 @@ Route::get('usuarios/{usuario}', 'UserController@show')->name('usuarios.show'); 
 Route::get('usuarios/{usuario}/edit', 'UserController@edit')->name('usuarios.edit'); //formulario de editar usuario
 Route::put('usuarios/{usuario}', 'UserController@update')->name('usuarios.update'); //actualizar usuario
 Route::delete('usuarios/{usuario}', 'UserController@destroy')->name('usuarios.destroy'); //formulario de eliminar usuario
+Route::resource('users', UserController::class);
 
 //CRUD para ventas
 Route::get('ventas', 'VentaController@index')->name('ventas.index'); //listado de ventas
