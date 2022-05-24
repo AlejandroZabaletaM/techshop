@@ -13,13 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('kardexes', function (Blueprint $table) {
+        Schema::create('bitacoras', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('producto_id');
-            $table->foreign('producto_id')->references('id')->on('productos');
-            $table->date('fecha_publicacion');
-            $table->integer('preguntas');
-            $table->integer('compras');
             $table->timestamps();
         });
     }
@@ -31,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kardexes');
+        Schema::dropIfExists('bitacoras');
     }
 };
